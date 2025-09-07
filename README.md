@@ -34,12 +34,14 @@ Extensive simulation studies were performed to evaluate these approaches, and a 
   ⚠️ **Note:** These scripts were implemented using **real clinical trial data**, which **cannot be made publicly available**.  
 
 - **`effMultiend/`**  
-  An R package under active development.  
+  An R package under development.  
   - Currently focuses on **simulation studies using an Item Response Theory (IRT) model** (the third data-generating mechanism described in the paper).  
   - Future updates will extend the package to include additional simulation methods and analysis approaches.  
 
 - **Other supporting files**  
   `.gitignore`, `.Rbuildignore`, `DESCRIPTION`, `NAMESPACE`, and project metadata for package development.
+
+- > **Note:** This repository does not yet include the additional simulation codes described in *Supplementary Material A* of the paper. These materials are currently private but will be made publicly available and added here in a future update.
 
 ---
 
