@@ -41,7 +41,7 @@ Extensive simulation studies were performed to evaluate these approaches, and a 
 - **Other supporting files**  
   `.gitignore`, `.Rbuildignore`, `DESCRIPTION`, `NAMESPACE`, and project metadata for package development.
 
-- > **Note:** This repository does not yet include the additional simulation codes described in *Supplementary Material A* of the paper. These materials are currently private but will be made publicly available and added here in a future update.
+- **Note:** This repository does not yet include the additional simulation codes described in *Supplementary Material A* of the paper. These materials are currently private but will be made publicly available and added here in a future update.
 
 ---
 
