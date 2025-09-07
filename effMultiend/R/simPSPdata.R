@@ -1,0 +1,35 @@
+#' A simulated dataset of a subset of items of the Progressive Supranuclear Palsy Rating Scale (PSPRS) in PSP
+#'
+#' This simulated dataset is in a long format and contains 17 variables. It specifically includes a subset of 10 items from the full version of the PSPRS presented
+#' in the ITEM column of the data frame. The DV column contains repeated simulated scores of the items.
+#' This dataset is used for estimation of the IRT model, linear model of items, and a corresponding latent trait estimation.
+#' 
+#' @name simPSPdata
+#' @title Simulated data set for patients of PSP
+#' @description
+#'   The variables are as follows:
+#'   \itemize{
+#'     \item ID: Unique patient identifier
+#'     \item STUDY_ID: 1, referring to the ABBV-8E12 trial
+#'     \item AGE: Age of patients
+#'     \item Sex: 1 for Female, 2 for Male
+#'     \item PHENOTYPE: PSP-RS ~ 9, PSP Diagnostic phenotype
+#'     \item TRT: Treatment, simulated treatment labels, 1 corresponds to the test group and 0 to the control group
+#'     \item VISIT: Visit number, where VISIT can take values 1, 6, 11, 14, 18. VISIT=1 and VISIT=18 correspond to baseline and week 52
+#'     \item TIME: Time in year
+#'     \item DV: Dependent variable, scores of the 10-item version of the PSPRS recommended by FDA, mostly vary from 0 to 4
+#'     \item ITEM: Item measured, representing the 10-item version of the PSPRS recommended by the FDA. Originally, these items were numbered 3, 4, 5, 12, 13, 24, 25, 26, 27, 28. In our implementation, we renamed them from 1 to 10
+#'     \item DOMAIN: Domain number
+#'     \item SCALE: PSPRS ~ 1, Global scale
+#'     \item RICH: Indicator variable, taking the value 1 if PHENOTYPE is 9, otherwise 0
+#'     \item INTERV: 1, if the study has been intervention
+#'    }
+#'
+#' @format A \code{data.frame} in the long format with 15740 rows and 14 variables
+#' @source A Simulated data frame
+#' @docType data
+#' @keywords datasets
+#' @usage data(simPSPdata)
+#' @seealso \code{\link{est_funcs}}
+#' 
+"simPSPdata"
