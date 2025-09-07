@@ -1,7 +1,5 @@
 # EffiMultiPSP
 
-# EffiMultiPSP
-
 This repository contains the ** R code implementations** accompanying the paper:
 
 > **"Efficiency of multivariate tests in trials in progressive supranuclear palsy"**  
