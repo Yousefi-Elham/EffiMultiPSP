@@ -116,51 +116,26 @@
 #' @examples
 #' \dontrun{
 #' # Example usage:
-#' # The value \rho < 1 indicates a beneficial treatment effect
-#' # for building progression model in power simulations
-#' Dval <- 0.45
-#' sim_data <- sim_data <- read.csv(
-#' "C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
-#' )
-#' csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#' csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
+#' # Load the built-in example dataset
+#' data("simPSPdata")
+#'
+#' # Run the analysis function
+#' # effectRatio: a coefficient (\rho < 1) indicating a beneficial treatment effect.
+#' # It is used to build the disease progression model in power simulations.
+#' # Suggested values range from 0.45, 0.50, …, 0.75, as used in the paper.
+#'
 #' analys_test_result <- test_fun_IRT(
-#' ni = 70,
-#' nj = 70,
-#' dat = sim_data,
-#' effectRatio = Dval,
-#' alphaa = 0.025,
-#' usefitted=TRUE)
+#'   ni = 70,
+#'   nj = 70,
+#'   dat = simPSPdata,
+#'   effectRatio = 0.45,
+#'   alphaa = 0.025,
+#'   usefitted = TRUE
+#' )
 #' }
 #'
 #' @export
 #' @keywords internal
-
-
-#test example
-#library(mirt)
-#library(dplyr)
-#library(tidyr)
-#library(tidyselect)
-#library(Matrix)
-#library(multcomp)
-#library(hommel)
-#library(mvtnorm)
-#Dval <- 0.45
-#sim_data <- read.csv(
-#"C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
-#)
-#set.seed(2405)
-#csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#set.seed(2310)
-#csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
-#analys_test_result <- test_fun_IRT(
-#ni = 70,
-#nj = 70,
-#dat = sim_data,
-#effectRatio = Dval,
-#alphaa = 0.025,
-#usefitted=TRUE)
 
 
 

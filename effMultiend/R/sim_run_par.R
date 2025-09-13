@@ -93,52 +93,31 @@
 #' library(mvtnorm)
 #' \dontrun{
 #' # Example usage:
-#' Dvec.list <- as.list(seq(0.45,0.75,by=0.05))
-#' sim_data <- read.csv(
-#' "C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+#' \dontrun{
+#' # Load the built-in example dataset
+#' data("simPSPdata")
+#'
+#' # Define effect ratios
+#' # effectRatio.list: coefficients (\rho < 1) indicating beneficial treatment effects.
+#' # Suggested values range from 0.45, 0.50, …, 0.75, as used in the paper.
+#' Dvec.list <- as.list(seq(0.45, 0.75, by = 0.05))
+#'
+#' # Run the simulation function
+#' analys_sim_result <- sim_run_par(
+#'   ni = 50,
+#'   nj = 50,
+#'   dat = simPSPdata,
+#'   effectRatio.list = Dvec.list,
+#'   n.sim = 100,
+#'   test_names = c(
+#'     "IRT.PSIF", "LM.PSIBPF", "SumS", "OLS", "GLS", "GLS_26",
+#'     "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"
+#'   )
 #' )
-#' set.seed(2403)
-#' csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#' set.seed(2310)
-#' csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
-#' analys_sim_result <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
-#' effectRatio.list = Dvec.list, n.sim = 10000,
-#' test_names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
-#'  "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"))
 #' }
 #'
+#'
 #' @export
-
-
-
-# test example
-#library(furrr)
-#library(parallel)
-#library(dplyr)
-#library(tidyr)
-#library(future)
-#library(GMCM)
-#library(matrixStats)
-#library(mirt)
-#library(dplyr)
-#library(tidyr)
-#library(tidyselect)
-#library(Matrix)
-#library(hommel)
-#library(multcomp)
-#library(mvtnorm)
-
-#Dvec.list <- as.list(seq(0.45,0.75,by=0.05))
-#sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
-#set.seed(2403)
-#csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#set.seed(2310)
-#csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
-
-#analys_sim_result <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
-#effectRatio.list = Dvec.list, alphaa = 0.025, usefitted=TRUE, n.sim = 100,
-#test_names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS",
-#             "GLS", "GLS_26", "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"))
 
 
 sim_run_par <- function(ni, nj, dat, effectRatio.list = NULL, alphaa = 0.025, usefitted=TRUE, n.sim,

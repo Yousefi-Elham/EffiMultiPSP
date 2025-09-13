@@ -78,8 +78,10 @@ getwd()
 list.files()
 
 
-#datPSP <- read_csv("H:/2023_08_PSP_DD/PSP_updated.csv")
-datPSP <- read_csv("2023_08_PSP_DD/PSP_updated.csv")
+# Load the dataset.
+# NOTE: This file is not publicly available. 
+# Please replace the path below with the location of (PSP) dataset on your system.
+datPSP <- readr::read_csv("path/to/your_dataset.csv")
 
 ### filter subset of the dataset which is of interest (10-item FDA suggested subset of the PSPRS scale from the AbbVie dataset)
 datAbbVie <- datPSP %>% filter(STUDY_ID==1,TIME>=0,SCALE==1,VISIT != 21,ITEM %in% c(3, 4, 5, 12, 13, 24, 25, 26, 27, 28))

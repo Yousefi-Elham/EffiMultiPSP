@@ -51,63 +51,40 @@
 #' @examples
 #' # Example usage:
 #' \dontrun{
-#' Dvec <- seq(0.45,0.75,by=0.05) # vector
-#' sim_data <- read.csv(
-#' "C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+#' # Example usage:
+#' \dontrun{
+#' # Load built-in example dataset
+#' data("simPSPdata")
+#'
+#' # Define effect ratios to simulate treatment effects
+#' Dvec <- seq(0.45, 0.75, by = 0.05)
+#'
+#' # Run parallel simulations
+#' simresult <- sim_run_par(
+#'   ni = 50, nj = 50,
+#'   dat = simPSPdata,
+#'   effectRatio.list = as.list(Dvec),
+#'   n.sim = 1000,  # reduced for example speed
+#'   test_names = c("IRT.PSIF", "LM.PSIBPF", "SumS", "OLS",
+#'                  "GLS", "GLS_26", "Bonf", "Tmin",
+#'                  "Simes", "Omnibus", "Omnibus_dom")
 #' )
-#' csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#' csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
-#' simresult <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
-#' effectRatio.list = as.list(Dvec), n.sim = 10000,
-#' test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
-#'  "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
-#' csStat.H0=csStat.H0item, csStat.H03dom=csStat.H0domain)
 #'
-#'
-#' plot_IRTsim(simresult=simresult, effectRatio = effectRatio, alphaa = 0.025,
-#' test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
-#'  "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
-#' scoretype=c("Original","Rescore"))
+#' # Plot simulation results
+#' plot_IRTsim(
+#'   simresult = simresult,
+#'   effectRatio = Dvec,
+#'   alphaa = 0.025,
+#'   test.names = c("IRT.PSIF", "LM.PSIBPF", "SumS", "OLS",
+#'                  "GLS", "GLS_26", "Bonf", "Tmin",
+#'                  "Simes", "Omnibus", "Omnibus_dom"),
+#'   scoretype = c("Original", "Rescore")
+#' )
 #' }
+#'
 #'
 #' @export
 
-
-
-# test example
-#library(dplyr)
-#library(tidyr)
-#library(ggplot2)
-#library(furrr)
-#library(parallel)
-#library(dplyr)
-#library(tidyr)
-#library(future)
-#library(matrixStats)
-#library(mirt)
-#library(dplyr)
-#library(tidyr)
-#library(tidyselect)
-#library(Matrix)
-#library(hommel)
-#library(multcomp)
-#library(mvtnorm)
-
-
-#Dvec <- seq(0.45,0.75,by=0.05) # vector C:/Users/elham00/_PSPclone
-
-#sim_data <- read.csv("C:/Users/elham00/_PSPclone/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv") #ages
-#sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv") #pc
-
-#csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
-#csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
-#analys_sim_result <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
-#effectRatio.list = as.list(Dvec), alphaa = 0.025, n.sim = 2000,
-#csStat.H0=csStat.H0item, csStat.H03dom=csStat.H0domain)
-
-#plot_IRTsim(simresult=analys_sim_result, effectRatio = Dvec, alphaa = 0.025,
-# test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26", "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
-# scoretype=c("Original","Rescore"))
 
 
 plot_IRTsim <- function(simresult, effectRatio = NULL, alphaa = 0.025,

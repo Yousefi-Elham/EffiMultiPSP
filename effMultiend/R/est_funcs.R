@@ -81,7 +81,7 @@
 #' Yousefi, E., Gewily, M., K\"{o}nig, F., H\"{o}glinger, G., Hopfner, F.,
 #' Karlsson, M. O., Ristl, R., Zehetmayer, S. & Posch, M. (2023).
 #' Efficiency of Multivariate Tests in Trials in Progressive Supranuclear Palsy.
-#' \emph{arXiv preprint arXiv:2312.08169}.
+#' \emph{https://www.nature.com/articles/s41598-024-76668-4}.
 #'
 #' @author Elham Yousefi
 #'
@@ -91,19 +91,17 @@
 #' @examples
 #' # Example usage:
 #' \dontrun{
-#' sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
-#' result <- est_funcs(sim_data)
+#' # Load the built-in simulated dataset
+#' data("simPSPdata")
+#'
+#' # Run the estimation function
+#' result <- est_funcs(simPSPdata)
 #' }
+#' For example result$IRTpar.est returns the fitted IRT model parameters.
 #'
 #' @export
 
 
-#test example
-#library(tidyr)
-#library(dplyr)
-#library(mirt)
-#sim_data<- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
-#sim_data<- read.csv("C:/2024/MUWfiles/2023_08_PSP_DD/artificial_data.csv")
 
 est_funcs <- function(longdata){
 
