@@ -32,6 +32,8 @@ otherwise the power simulations are performed. Default = NULL.}
 
 \item{alphaa}{Alpha level. Default is 0.025.}
 
+\item{usefitted}{Logical; if TRUE, use fitted values in the simulation. Default = TRUE.}
+
 \item{n.sim}{Number of simulation runs.}
 
 \item{test_names}{A character vector specifying the names of tests to be performed. This includes all the following tests:
@@ -48,12 +50,6 @@ otherwise the power simulations are performed. Default = NULL.}
 \item \code{"Omnibus"}: refer to the documentation of the \link{test_fun_IRT} function for more details.
 \item \code{"Omnibus_dom"}: refer to the documentation of the \link{test_fun_IRT} function for more details.
 }}
-
-\item{csStat.H0}{Cumulative mean values of independently generated item-wise p-values under the null hypothesis.
-This variable is pre-computed using \code{\link{csStat_H0_func}}. Item-wise p-values are of length 10.}
-
-\item{csStat.H03dom}{Cumulative mean values of independently generated domain-wise p-values under the null hypothesis.
-This variable is pre-computed using \code{\link{csStat_H0_func}}. Domain-wise p-values are of length 3.}
 }
 \value{
 A data frame containing the results of simulations for all the
@@ -88,15 +84,17 @@ library(mvtnorm)
 \dontrun{
 # Example usage:
 Dvec.list <- as.list(seq(0.45,0.75,by=0.05))
-sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
+sim_data <- read.csv(
+"C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+)
 set.seed(2403)
 csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
 set.seed(2310)
 csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
 analys_sim_result <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
 effectRatio.list = Dvec.list, n.sim = 10000,
-test_names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26", "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
-csStat.H0=csStat.H0item, csStat.H03dom=csStat.H0domain)
+test_names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
+ "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"))
 }
 
 }

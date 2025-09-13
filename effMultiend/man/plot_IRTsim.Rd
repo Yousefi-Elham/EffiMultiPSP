@@ -47,17 +47,21 @@ of analysis tests is plotted.
 # Example usage:
 \dontrun{
 Dvec <- seq(0.45,0.75,by=0.05) # vector
-sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
+sim_data <- read.csv(
+"C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+)
 csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
 csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
 simresult <- sim_run_par(ni = 50, nj = 50, dat = sim_data,
 effectRatio.list = as.list(Dvec), n.sim = 10000,
-test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26", "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
+test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
+ "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
 csStat.H0=csStat.H0item, csStat.H03dom=csStat.H0domain)
 
 
 plot_IRTsim(simresult=simresult, effectRatio = effectRatio, alphaa = 0.025,
-test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26", "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
+test.names=c("IRT.PSIF", "LM.PSIBPF", "SumS",  "OLS", "GLS", "GLS_26",
+ "Bonf", "Tmin", "Simes", "Omnibus", "Omnibus_dom"),
 scoretype=c("Original","Rescore"))
 }
 

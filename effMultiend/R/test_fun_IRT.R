@@ -119,7 +119,9 @@
 #' # The value \rho < 1 indicates a beneficial treatment effect
 #' # for building progression model in power simulations
 #' Dval <- 0.45
-#' sim_data <- sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
+#' sim_data <- sim_data <- read.csv(
+#' "C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+#' )
 #' csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
 #' csStat.H0domain <-csStat_H0_func(m=3,N.sim=100000)
 #' analys_test_result <- test_fun_IRT(
@@ -145,7 +147,9 @@
 #library(hommel)
 #library(mvtnorm)
 #Dval <- 0.45
-#sim_data <- read.csv("C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv")
+#sim_data <- read.csv(
+#"C:/2024/PSP_directory/MultiendPSP/effMultiend/inst/extdata/simPSP_lim.csv"
+#)
 #set.seed(2405)
 #csStat.H0item <- csStat_H0_func(m = 10, N.sim = 100000)
 #set.seed(2310)

@@ -10,33 +10,38 @@ est_funcs(longdata)
 \arguments{
 \item{longdata}{A data frame containing repeated measures of patients.
 This dataset is used for estimation of the IRT model, linear model of items,
-and corresponding latent trait estimation.
-The variables include:
-- \item{ID}{Unique patient identifier}
-- \item{STUDY_ID}{1, referring to the ABBV-8E12 trial}
-- \item{AGE}{Age of patients}
-- \item{Sex}{1 for Female, 2 for Male}
-- \item{PHENOTYPE}{PSP-RS ~ 9, PSP Diagnostic phenotype}
-- \item{TRT}{Treatment, simulated treatment labels, 1 corresponds to the test group and 0 to the control group}
-- \item{VISIT}{Visit number, where VISIT can take the values 1, 6, 11, 14, 18. VISIT=1 and VISIT=18 correspond to baseline and week 52}
-- \item{TIME}{Time in year}
-- \item{DV}{Dependent variable, scores of the 10-item version of the PSPRS recommended by FDA, mostly vary from 0 to 4}
-- \item{ITEM}{Item measured, representing the 10-item version of the PSPRS recommended by the FDA. Originally, these items were numbered 3, 4, 5, 12, 13, 24, 25, 26, 27, 28. In our implementation, we renamed them from 1 to 10}
-- \item{DOMAIN}{Domain number}
-- \item{SCALE}{PSPRS ~ 1, Global scale}
-- \item{RICH}{Indicator variable, taking the value 1 if PHENOTYPE is 9, otherwise 0}
-- \item{INTERV}{1, if the study has been intervention}}
+and corresponding latent trait estimation. The variables include:
+\describe{
+\item{\code{ID}}{Unique patient identifier.}
+\item{\code{STUDY_ID}}{1, referring to the ABBV-8E12 trial.}
+\item{\code{AGE}}{Age of patients.}
+\item{\code{Sex}}{1 for Female, 2 for Male.}
+\item{\code{PHENOTYPE}}{PSP-RS = 9, PSP diagnostic phenotype.}
+\item{\code{TRT}}{Treatment label; 1 = test group, 0 = control group.}
+\item{\code{VISIT}}{Visit number; can be 1, 6, 11, 14, 18
+(\code{VISIT = 1} baseline; \code{VISIT = 18} week 52).}
+\item{\code{TIME}}{Time in years.}
+\item{\code{DV}}{Scores of the 10-item PSPRS recommended by FDA (mostly 0–4).}
+\item{\code{ITEM}}{Item index for the FDA 10-item PSPRS. Originally numbered
+3, 4, 5, 12, 13, 24, 25, 26, 27, 28; here renamed 1–10.}
+\item{\code{DOMAIN}}{Domain number.}
+\item{\code{SCALE}}{Global scale (PSPRS = 1).}
+\item{\code{RICH}}{Indicator; 1 if \code{PHENOTYPE == 9}, otherwise 0.}
+\item{\code{INTERV}}{1 if the study is interventional.}
+}}
 }
 \value{
-A list containing various model estimates with the following components.
-Note that values with the extension '.RESC' stand for the rescored items and have similar interpretations as those in the following:
-\item{IRTmodel.full}{Full IRT model}
-\item{IRTpar.est}{Estimated parameters for the IRT model.}
-\item{Linmodel.PSIpf}{Linear model of items with the (transformed) estimated
-latent trait from the IRT model as the depedent variable}
-\item{est.IRTlatent.pf}{Estimated latent traits for each patient from the IRT model}
-\item{est.LMlatent.bpf}{Approximated latent traits for each patient from the linear model of items}
-\item{id.overlap}{Patient IDs who have all item scores both at baseline and week 52}
+A list containing various model estimates (values with suffix
+\code{.RESC} are based on rescored items):
+\describe{
+\item{\code{IRTmodel.full}}{Full IRT model.}
+\item{\code{IRTpar.est}}{Estimated parameters for the IRT model.}
+\item{\code{Linmodel.PSIpf}}{Linear model of items with the (transformed)
+IRT latent trait as the dependent variable.}
+\item{\code{est.IRTlatent.pf}}{Estimated latent traits for each patient from the IRT model.}
+\item{\code{est.LMlatent.bpf}}{Approximated latent traits for each patient from the linear model of items.}
+\item{\code{id.overlap}}{Patient IDs with item scores at both baseline and week 52.}
+}
 }
 \description{
 This function receives a simulated data set in the long format as the input.

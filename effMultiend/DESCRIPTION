@@ -2,10 +2,13 @@ Package: effMultiend
 Title: Simulation and Analysis of Multivariate Endpoints in Trials in Progressive Supranuclear Palsy
 Version: 1.0
 Authors@R: 
-    person("Elham", "Yousefi", , "elham.yousefi@meduniwien.ac.at", role = c("aut", "cre"),
+    person("Elham", "Yousefi", , "elham.yousefi@ages.at", role = c("aut", "cre"),
            comment = c(ResearchGateID = "Elham-Yousefi-3"))
-Description: IRT-based data simulation and analysis methods of multivariate endpoints (items) in trials in progressive supranuclear palsy. Efficiency of multiple multivariate analysis tests are evaluated through the comparison of simulated power. The corresponding type one error rates are estimated as well.
-License: MIT
+Description: IRT-based data simulation and analysis methods for multivariate endpoints 
+    (items) in trials of progressive supranuclear palsy. Efficiency of 
+    analysis tests is evaluated through the comparison of simulated power. The corresponding 
+    type I error rates are estimated as well.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
