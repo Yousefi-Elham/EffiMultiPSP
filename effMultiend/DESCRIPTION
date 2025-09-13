@@ -8,7 +8,7 @@ Description: IRT-based data simulation and analysis methods for multivariate end
     (items) in trials of progressive supranuclear palsy. Efficiency of 
     analysis tests is evaluated through the comparison of simulated power. The corresponding 
     type I error rates are estimated as well.
-License: MIT + file LICENSE
+License: GNU + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1

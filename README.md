@@ -63,4 +63,4 @@ Yousefi, E., et al. (2024). *Efficiency of multivariate tests in trials in progr
 
 ## License
 
-This repository is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+This repository is released under the GNU License. See the [LICENSE](LICENSE) file for details.
